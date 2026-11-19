@@ -167,7 +167,7 @@ Por lo tanto:
 
 **Grupo 7 – Ingeniería Civil Telemática, UTFSM**
 
-- Bastian
+- Bastian Torres
 - Nicole Zúñiga
 
 ## Evidencias incluidas
