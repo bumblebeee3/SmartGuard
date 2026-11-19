@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartGuard · Analizador Solidity</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">UTFSM · Grupo 7 · Prototipo académico</p>
+        <h1>SmartGuard</h1>
+        <p class="lead">Revisión heurística de patrones de seguridad en contratos inteligentes escritos en Solidity.</p>
+      </div>
+      <div class="version-card">
+        <span>Versión</span>
+        <strong>0.2</strong>
+        <small>análisis local de código fuente</small>
+      </div>
+    </header>
+
+    <section class="summary-grid intro-summary">
+      <article><span id="ruleCount">8</span><small>reglas activas</small></article>
+      <article><span>.sol</span><small>carga de archivos</small></article>
+      <article><span>JSON</span><small>reporte descargable</small></article>
+      <article><span>API</span><small>FastAPI + Python</small></article>
+    </section>
+
+    <section class="card editor-card">
+      <div class="card-heading">
+        <div>
+          <p class="section-kicker">Entrada</p>
+          <h2>Código Solidity</h2>
+        </div>
+        <div class="toolbar">
+          <label class="secondary-button file-button" for="fileInput">Subir .sol</label>
+          <input id="fileInput" type="file" accept=".sol,text/plain" hidden />
+          <button class="secondary-button" data-sample="vulnerable">Ejemplo vulnerable</button>
+          <button class="secondary-button" data-sample="safer">Ejemplo más seguro</button>
+          <button class="ghost-button" id="clear">Limpiar</button>
+        </div>
+      </div>
+
+      <textarea id="code" spellcheck="false" placeholder="Pega aquí el código de tu contrato inteligente o carga un archivo .sol..."></textarea>
+      <div class="editor-footer">
+        <span id="lineCount">0 líneas</span>
+        <button class="primary-button" id="analyze">Analizar contrato</button>
+      </div>
+    </section>
+
+    <section id="results" hidden>
+      <div class="results-title-row">
+        <div>
+          <p class="section-kicker">Salida</p>
+          <h2>Resultados del análisis</h2>
+        </div>
+        <button class="secondary-button" id="downloadReport" disabled>Descargar JSON</button>
+      </div>
+
+      <div class="summary-grid results-summary">
+        <article class="total"><span id="totalCount">0</span><small>hallazgos</small></article>
+        <article class="high"><span id="highCount">0</span><small>alta</small></article>
+        <article class="medium"><span id="mediumCount">0</span><small>media</small></article>
+        <article class="low"><span id="lowCount">0</span><small>baja</small></article>
+      </div>
+
+      <div class="review-banner" id="reviewLevel"></div>
+      <div class="findings" id="findings"></div>
+      <p class="disclaimer" id="disclaimer"></p>
+    </section>
+
+    <section class="card rules-card">
+      <div class="card-heading">
+        <div>
+          <p class="section-kicker">Alcance actual</p>
+          <h2>Reglas implementadas</h2>
+        </div>
+        <span class="pill">No reemplaza una auditoría profesional</span>
+      </div>
+      <div class="rules-grid" id="rulesGrid"></div>
+    </section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
